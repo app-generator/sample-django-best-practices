@@ -21,7 +21,7 @@ services:
       - "7000:7000"
     command: >
       sh -c " python manage.py migrate &&
-          gunicorn CoreRoot.wsgi:application --bind 0.0.0.0:7000"
+          gunicorn core.wsgi:application --bind 0.0.0.0:7000"
     volumes:
      - .:/app
      - static_volume:/app/static
