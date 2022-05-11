@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
+from xmlrpc.client import boolean
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,11 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=(7n)5=e^lxc1273yu5=dqz60uv383gd6tt!6@q3yngpc^rw1f'
+SECRET_KEY = os.getenv("SECRET_KEY", '*2by*n5r6bs=!-si+neq5b&o&l780k2a8w@d%!(iiu56trw)#q')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = boolean(os.getenv("DEBUG", 1))
 
 ALLOWED_HOSTS = []
 

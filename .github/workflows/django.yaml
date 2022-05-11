@@ -9,6 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Creating env file
+      run: |
+        touch .env
+        echo SECRET_KEY=foo >> .env
+        echo DEBUG=0 >> .env
     - name: Building containers
       run: |
         docker-compose up -d --build
