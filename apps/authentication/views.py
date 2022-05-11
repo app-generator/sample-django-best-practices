@@ -5,10 +5,12 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render, redirect
 
+from ratelimit.decorators import ratelimit
+
 from apps.user.models import User
 from .forms import LoginForm, SignUpForm
 
-
+@ratelimit(key="ip", rate="10/5m", method=ratelimit.ALL, block=True)
 def login_view(request):
     form = LoginForm(request.POST or None)
 
@@ -38,7 +40,7 @@ def login_view(request):
 
     return render(request, "accounts/login.html", {"form": form, "msg": msg})
 
-
+@ratelimit(key="ip", rate="10/5m", method=ratelimit.ALL, block=True)
 def register_user(request):
     msg = None
     success = False
