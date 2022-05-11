@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 
-from apps.user.models import Profile
+from apps.user.models import User
 
 
 class LoginForm(forms.Form):
@@ -38,7 +38,7 @@ class SignUpForm(UserCreationForm):
     )
 
     class Meta:
-        model = Profile
+        model = User
         fields = ("username", "email", "password1", "password2")
 
     def save(self, commit=True, *args, **kwargs):

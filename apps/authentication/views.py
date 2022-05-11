@@ -5,7 +5,7 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render, redirect
 
-from apps.profile.models import Profile
+from apps.user.models import User
 from .forms import LoginForm, SignUpForm
 
 
@@ -25,7 +25,7 @@ def login_view(request):
                 return redirect("/")
             else:
                 try:
-                    user_temp = Profile.objects.get(username=username)
+                    user_temp = User.objects.get(username=username)
                 except ObjectDoesNotExist:
                     user_temp = None
 
