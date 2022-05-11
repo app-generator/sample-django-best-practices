@@ -1,7 +1,7 @@
 version: '3.9'
 
 services:
-  nginx:
+  web:
     container_name: core_web
     restart: on-failure
     image: nginx:stable
@@ -12,7 +12,7 @@ services:
       - "80:80"
     depends_on:
       - web
-  web:
+  app:
     container_name: core_app
     build: .
     restart: always
