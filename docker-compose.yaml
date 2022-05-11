@@ -11,7 +11,7 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - web
+      - app
   app:
     container_name: core_app
     build: .
