@@ -1,0 +1,56 @@
+{% extends "includes/base.html" %}
+
+    
+{% block content %}
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="card col-5 m-5">
+            <div class="card-body text-center">
+                <div class="mb-4">
+                    <i class="feather icon-user-plus auth-icon"></i>
+                </div>
+                <h3 class="mb-4">Sign up</h3>
+
+                <span class="mb-0 text-muted">
+                    {% if msg %}
+                        {{ msg | safe }}
+                    {% else %}
+                        Add your credentials
+                    {% endif %} 
+                </span>
+
+                <br />
+                <br />
+
+                <form role="form" method="post" action="">
+
+                    {% csrf_token %}                    
+
+                    <div class="input-group mb-3">
+                        {{ form.username }}
+                    </div>
+                    <span class="text-error">{{ form.username.errors }}</span>
+
+                    <div class="input-group mb-3">
+                        {{ form.email }}
+                    </div>
+                    <span class="text-error">{{ form.email.errors }}</span>
+
+                    <div class="input-group mb-4">
+                        {{ form.password1 }}
+                    </div>
+                    <span class="text-error">{{ form.password1.errors }}</span>
+
+                    <div class="input-group mb-4">
+                        {{ form.password2 }}
+                    </div>
+                    <span class="text-error">{{ form.password2.errors }}</span>
+                    
+                    <button type="submit" name="register" class="btn btn-primary shadow-2 mb-4">Register</button>
+
+                </form>
+
+                <p class="mb-0 text-muted">Already have an account? <a href="{% url 'login' %}" >Login</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,45 @@
+{% extends "includes/base.html" %}
+
+    
+{% block content %}
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="card col-5 m-5">
+            <div class="card-body text-center">
+                <div class="mb-4">
+                    <i class="feather icon-unlock auth-icon"></i>
+                </div>
+                <h3 class="mb-4">Login</h3>
+    
+                <span class="mb-0 text-muted">
+                    {% if msg %}
+                        {{ msg | safe }}
+                    {% else %}
+                        Add your credentials
+                    {% endif %} 
+                </span>
+    
+                <br />
+                <br />
+    
+                <form role="form" method="post" action="">
+    
+                    {% csrf_token %}                   
+    
+                    <div class="input-group mb-3">
+                        {{ form.username }}
+                    </div>
+                    
+                    <div class="input-group mb-4">
+                        {{ form.password }}
+                    </div>
+                    
+                    <button type="submit" name="login" class="btn btn-primary shadow-2 mb-4">Login</button>
+    
+                </form>
+    
+                <p class="mb-0 text-muted">Don’t have an account? <a href="{% url 'register' %}" >Sign UP</a></p>
+                <br />
+            </div>
+        </div>
+    </div>
+{% endblock content %}
