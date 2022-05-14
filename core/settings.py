@@ -30,6 +30,7 @@ DEBUG = boolean(os.getenv("DEBUG", 1))
 
 ALLOWED_HOSTS = ["djanfgo-best.herokuapp.com", "localhost", "127.0.0.1"]
 
+CSRF_TRUSTED_ORIGINS = ["https://djanfgo-best.herokuapp.com"]
 
 # Application definition
 
