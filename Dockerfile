@@ -14,8 +14,9 @@ RUN apk update \
     && apk add --virtual build-essential gcc python3-dev musl-dev
 
 # install dependencies
-COPY ./requirements.txt .
-RUN pip install -r requirements.txt
+COPY requirements.txt /app/requirements.txt
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r requirements.txt
 
 # copy project
 COPY . .
