@@ -14,7 +14,9 @@ services:
       - app
   app:
     container_name: core_app
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
     restart: always
     env_file: .env
     ports:
