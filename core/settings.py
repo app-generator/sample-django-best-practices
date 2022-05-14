@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv("SECRET_KEY", '*2by*n5r6bs=!-si+neq5b&o&l780k2a8w@d%!(iiu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = boolean(os.getenv("DEBUG", 1))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["djanfgo-best.herokuapp.com", "localhost", "127.0.0.1"]
 
 
 # Application definition
