@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   test:
@@ -34,7 +34,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_api_key: "a6528143-9255-4e02-9d48-24b407bb0c97"
           heroku_app_name: "djanfgo-best" #Must be unique in Heroku
           heroku_email: "onaelmangabo@gmail.com"
           usedocker: true
