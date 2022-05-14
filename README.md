@@ -18,8 +18,8 @@ A simple `Django` codebase that provides best practices for a secure production 
 | ✔️ | SCSS to CSS compilation | - |
 | ✔️ | Rate Limiter for Login & Register | - |
 | ✔️ | Page Compression | - |
-| ❌ | Deployment | - |
-| ❌ | HEROKU integration | TODO add secrets to git repo |
+| ✔️ | Deployment | - |
+| ✔️ | HEROKU integration | - |
 | ✔️ | Docker | - |
 
 <br />
