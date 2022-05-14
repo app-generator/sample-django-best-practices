@@ -4,5 +4,7 @@ django-ratelimit==3.0.1
 pytest==7.1.2
 pytest-django==4.5.2
 django-compressor==4.0
+django-libsass==0.9
 django-static-precompiler==2.1
+libsass==0.20.1
 
