@@ -7,4 +7,5 @@ django-compressor==4.0
 django-libsass==0.9
 django-static-precompiler==2.1
 libsass==0.20.1
+whitenoise==6.1.0
 
