@@ -50,7 +50,7 @@ $ python manage.py makemigrations && python manage.py migrate && python manage.p
 
 ## ✨ Pre-compile and compressing styles files
 
-These processes are automatically handled when the server is running. For this, we are using packages like:
+These processes are automatically handled when the server is running. For this, we are using django packages such as:
 
 - [django-static-precompiler](https://github.com/andreyfedoseev/django-static-precompiler)
 - [django-compressor](https://django-compressor.readthedocs.io/en/stable/)
