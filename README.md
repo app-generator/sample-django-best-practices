@@ -43,7 +43,9 @@ $ # Install requirements
 $ pip3 install -r requirements.txt
 $
 $ # Run the application
-$ python manage.py makemigrations && python manage.py migrate && python manage.py runserver
+$ python manage.py makemigrations  
+$ python manage.py migrate
+$ python manage.py runserver
 ```
 
 <br />
