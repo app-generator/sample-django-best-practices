@@ -60,6 +60,16 @@ These processes are automatically handled when the server is running. For this, 
 
 ## ✨ Build from docker
 
+Before building the containers with Docker, create a `.env` file. You can check `.env.sample` file for the structure of the environment 
+file. You will need to have a `SECRET_KEY` and `DEBUG` variables. You can check [djecrety](https://djecrety.ir/).
+
+```bash
+SECRET_KEY=
+DEBUG=
+```
+
+And finally, build and run the containers.
+
 ```bash
 docker-compose up --build -d
 ```
