@@ -68,7 +68,7 @@ SECRET_KEY=
 DEBUG=
 ```
 
-And finally, build and run the containers.
+And finally, build and run the containers. The `Dockerfile.dev` at the root of the project is used for the Django application.
 
 ```bash
 docker-compose up --build -d
@@ -78,11 +78,12 @@ The application will be running at http://localhost:85
 
 ## ✨ Deploy on github workflow
 
-```bash
+For the deployment on Heroku, there no need to use `docker-compose`. Heroku just need a Dockerfile. You can find
+an example of a `Dockerfile` for Heroku deployment at the [root of the project](https://github.com/app-generator/sample-django-best-practices/blob/main/Dockerfile).
+
 First set the git secrets using this https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository
 Add the following keys to the secrets : HEROKU_APP_NAME , HEROKU_EMAIL , HEROKU_API_KEY. 
 Note that the test job will run before the deploy is triggered.
-```
 
 ## ✨ Code-base structure
 
