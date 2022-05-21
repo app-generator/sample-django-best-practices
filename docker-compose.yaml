@@ -19,8 +19,6 @@ services:
       dockerfile: Dockerfile.dev
     restart: always
     env_file: .env
-    ports:
-      - "5005:5005"
     command: >
       sh -c " python manage.py migrate &&
           gunicorn core.wsgi:application --bind 0.0.0.0:5005"
