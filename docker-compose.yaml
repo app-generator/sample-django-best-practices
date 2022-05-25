@@ -4,10 +4,10 @@ services:
   web:
     container_name: core_web
     restart: on-failure
-    image: nginx:stable
+    image: nginx:latest
     volumes:
       - ./nginx/nginx.dev.conf:/etc/nginx/conf.d/default.conf
-      - static_volume:/app/static
+      - static_volume:/app/staticfiles
     ports:
       - "85:85"
     depends_on:
@@ -24,7 +24,7 @@ services:
           gunicorn core.wsgi:application --bind 0.0.0.0:5005"
     volumes:
      - .:/app
-     - static_volume:/app/static
+     - static_volume:/app/staticfiles
 
 volumes:
   static_volume:
