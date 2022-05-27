@@ -82,8 +82,6 @@ Your assets may come a CDN. Find the `STATIC_URL` and `MEDIA_URL` variables and 
 
 First of all, if you have configured routing for static and media files, make sure they are only used on `DEBUG`.
 
-
-
 ```python
 STATIC_URL = 'http://ZONE_URL/static/'
 MEDIA_URL = 'http://ZONE_URL/media/'
@@ -100,6 +98,14 @@ python manage.py collectstatic
 ```
 
 The command above will move the pull static files in the `STATIC_ROOT`. 
+
+## ✨ Testing
+
+Tests in the projects are handled with `pytest`. To run the tests in this project, type the following command in the shell.
+
+```bash
+pytest
+```
 
 
 ## ✨ Deploy on github workflow
