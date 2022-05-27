@@ -76,6 +76,32 @@ docker-compose up --build -d
 
 The application will be running at http://localhost:85
 
+## ✨ Assets Management for production
+
+Your assets may come a CDN. Find the `STATIC_URL` and `MEDIA_URL` variables and modify them according to your zone URL or Zone alias.
+
+First of all, if you have configured routing for static and media files, make sure they are only used on `DEBUG`.
+
+
+
+```python
+STATIC_URL = 'http://ZONE_URL/static/'
+MEDIA_URL = 'http://ZONE_URL/media/'
+
+if DEBUG:
+   STATIC_URL = '/static/'
+   MEDIA_URL = '/media/'
+```
+
+We are nearly done, but Django comes with its own static files. These files should be moved to the `STATIC_ROOT` folder. 
+
+```python 
+python manage.py collectstatic
+```
+
+The command above will move the pull static files in the `STATIC_ROOT`. 
+
+
 ## ✨ Deploy on github workflow
 
 For the deployment on Heroku, there no need to use `docker-compose`. Heroku just need a Dockerfile. You can find
